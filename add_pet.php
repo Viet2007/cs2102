@@ -4,7 +4,7 @@
     <title>Add Pet</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="afterlogin-user.css">
+	<link rel="stylesheet" href="Sign_up.css">
 </head>
 
 <?php
@@ -20,18 +20,17 @@
 
 <?php
     include_once __DIR__ . '/controller/petController.php';
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $loged_in) {
         addPet($email, $_POST['name'], $_POST['type'], $_POST['description'],
                NULL, NULL);
     }
+
     echo "YEY ITS OK!";
 ?>
 
 <body>
-<ul>
-    <li><a href="#">NAVY</a></li> <!--go to mainpage-->
-    <li style="float:right"><a href="index.php">Sign out</a></li>
-</ul>
+
 <div>
 <p class="heading">Add Pet</p>
 
@@ -47,7 +46,7 @@
 	<br><br>
 	<input type="submit" value="Add Pet">
 </form>
-<p>Go back to <a href="#">main page</a></p>
+<p>Go back to <a href="index.php">main page</a></p>
 </div>
 
 </body>

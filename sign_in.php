@@ -1,5 +1,22 @@
+
 <!DOCTYPE html>
 <html>
+<?php
+    session_start();
+
+    include_once __DIR__ . '/controller/userController.php';
+  
+    if(isset($_POST['email'])) {
+      $email = $_POST['email'];
+      $pass = $_POST['password'];
+
+      if(signIn($email, $pass)) {
+          $_SESSION['email'] = $email;
+      }
+
+      header('Location:./index.php');
+    }
+?>
 <head>
     <title>Sign In</title>
     <meta charset="UTF-8">
@@ -31,3 +48,4 @@
 </div>
 </body>
 </html>
+
